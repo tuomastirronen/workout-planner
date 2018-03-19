@@ -4,7 +4,7 @@
 * Palveluun rekisteröityminen
 * Treeniohjelman luominen
   * Käyttäjä voi rakentaa viikko-ohjelman, joka koostuu päivärutiineista
-  * Päivärutiini koostuu harjoituksista, esim hauiskääntö 3*10*15kg
+  * Päivärutiini koostuu harjoituksista, esim hauiskääntö 3x10x15kg
   
 * Rutiinin suorittaminen
   * Suorituksen kirjaaminen (toteutuneiden toistojen ja painojen määrät, ajankäyttö)
