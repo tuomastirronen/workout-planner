@@ -25,6 +25,11 @@ Backend totetuteaan Nodella
 Tietokantana käytetään Postgresiä
 
 ### Models
+* User
+ * Email
+ * First name
+ * Last name
+ 
 * Muscle
   * Name
   * Image
@@ -37,9 +42,11 @@ Tietokantana käytetään Postgresiä
 * Routine
   * HAS MANY EXERCISES
   * Weekday
+  * Name
 
 * Exercise
   * BELONGS TO MOVEMENT
+  * BELONGS TO EXERCISE
   * Routine ID
   * Movement ID
   * Sets
