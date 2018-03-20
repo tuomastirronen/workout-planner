@@ -1,6 +1,7 @@
 # Workout Planner
 
 ## Asennus ja käyttöönotto
+* Luo tietokanta paikalliselle PostgreSQL palvelimelle
 * Kloonaa tämä repositorio koneellesi  
 `git clone git@github.com:tuomastirronen/workout-planner.git`
 * Mene projektin juureen ja suorita  

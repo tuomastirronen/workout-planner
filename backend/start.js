@@ -1,24 +1,44 @@
 // require enviroment variables
 require('dotenv').config()
+const Sequelize = require('sequelize')
 
 
 // Connect to our Database and handle any bad connections
 // PostgreSQL initialization here
-const { Client } = require('pg')
-const client = new Client()
 
-await client.connect()
+// const db = new Sequelize(
+//   process.env.DATABASE_NAME,
+//   process.env.DATABASE_USER,
+//   process.env.DATABASE_PASSWORD, {
+//     host: 'localhost',
+//     dialect: 'postgres',
+//     operatorsAliases: false,
 
-const res = await client.query('SELECT $1::text as message', ['Hello world!'])
-console.log(res.rows[0].message) // Hello world!
-await client.end()
+//     pool: {
+//       max: 5,
+//       min: 0,
+//       acquire: 30000,
+//       idle: 10000
+//     }
+//   })
+
+// // test PostgreSQL connection via sequelize
+
+// try {
+//   const dbConnection = db.authenticate()
+//   console.log('Connection has been established successfully.')
+// } catch(err) {
+//   console.error('Unable to connect to the database:', err)
+// }
 
 // Import models
+require('./models/index')
+//require('./models/Routine')
 
 
 // Start our app!
-const app = require('./app');
-app.set('port', process.env.PORT || 7777);
+const app = require('./app')
+app.set('port', process.env.PORT || 7777)
 const server = app.listen(app.get('port'), () => {
-  console.log(`Express running → PORT ${server.address().port}`);
-});
+  console.log(`Express running → PORT ${server.address().port}`)
+})
