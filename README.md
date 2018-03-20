@@ -3,8 +3,8 @@
 ## Asennus ja käyttöönotto
 * Kloonaa tämä repositorio koneellesi  
 `git clone git@github.com:tuomastirronen/workout-planner.git`
-* Mene projektin juureen; joko  
-`cd workout-planner/backend` tai `cd workout-planner/frontend` -kansioon
+* Mene projektin juureen ja suorita  
+`cd workout-planner/backend`
 * Suorita tarvittavat liitännäiset komennolla  
 `npm install`
 * Käynnistä palvelin development tilassa  
