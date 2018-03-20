@@ -1,5 +1,12 @@
 # Workout Planner
 
+## Asennus ja käyttöönotto
+* Kloonaa tämä repositorio koneellesi
+* Mene projektin juureen; joko `cd workout-planner/backend` tai `cd workout-planner/frontend` -kansioon
+* Suorita `npm install` asentaaksesi tarvittavat liitännäiset
+* Käynnistä palvelin development tilassa `npm start`
+* Sovellus käynnistyy paikallisesti osoitteeseen: localhost:7777
+
 ## Toiminnalliset vaatimukset
 * Palveluun rekisteröityminen
 * Treeniohjelman luominen
