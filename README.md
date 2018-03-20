@@ -16,13 +16,13 @@
 ## Tekninen toteutus
 
 ### Frontend
-Frontend totetutetaan Reactilla
+Frontend totetutetaan React + Redux
 
 ### Backend
-Backend totetuteaan Nodella
+Backend totetuteaan Node.js + Express
 
 ### Tietokanta
-Tietokantana käytetään Postgresiä
+Tietokantana käytetään PostgreSQL tietokantaa
 
 ### Models
 * User
