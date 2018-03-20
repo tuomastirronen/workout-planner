@@ -1,5 +1,9 @@
 # Workout Planner
 
+## Tekijät
+* Tuomas Tirronen
+* Joona Nissinen
+
 ## Asennus ja käyttöönotto
 * Luo tietokanta paikalliselle PostgreSQL palvelimelle
 * Kloonaa tämä repositorio koneellesi  
