@@ -9,7 +9,7 @@
 * Suorita tarvittavat liitännäiset komennolla  
 `npm install`
 * Käynnistä palvelin development tilassa  
-`npm start`
+`npm run watch`
 * Sovellus käynnistyy paikallisesti osoitteeseen  
 `localhost:7777`
 
