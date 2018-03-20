@@ -5,12 +5,13 @@
 * Joona Nissinen
 
 ## Asennus ja käyttöönotto
-* Luo tietokanta paikalliselle PostgreSQL palvelimelle
+* Luo tietokanta paikalliselle PostgreSQL palvelimelle  
+$`sudo -u postgres psql -c 'create database workout-planner;'`
 * Kloonaa tämä repositorio koneellesi  
 `git clone git@github.com:tuomastirronen/workout-planner.git`
 * Mene projektin juureen ja suorita  
 `cd workout-planner/backend`
-* Suorita tarvittavat liitännäiset komennolla  
+* Asenna tarvittavat liitännäiset komennolla  
 `npm install`
 * Käynnistä palvelin development tilassa  
 `npm run watch`
