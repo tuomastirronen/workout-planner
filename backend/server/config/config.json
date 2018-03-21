@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": null,
+    "username": "postgres",
     "password": null,
     "database": "workout-planner-dev",
     "host": "127.0.0.1",
@@ -8,7 +8,7 @@
     "dialect": "postgres"
   },
   "test": {
-    "username": null,
+    "username": "postgres",
     "password": null,
     "database": "workout-planner-test",
     "host": "127.0.0.1",

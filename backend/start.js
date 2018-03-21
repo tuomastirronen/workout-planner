@@ -32,7 +32,7 @@ const Sequelize = require('sequelize')
 // }
 
 // Import models
-require('./models/index')
+require('./server/models/index')
 //require('./models/Routine')
 
 
