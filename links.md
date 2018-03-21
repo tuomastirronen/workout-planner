@@ -8,6 +8,7 @@
 * https://fullstack-hy.github.io/osa6/
 * https://egghead.io/courses/start-learning-react
 * https://egghead.io/courses/the-beginner-s-guide-to-reactjs
+* https://egghead.io/courses/getting-started-with-redux
 ### CSS
 * linkki
 ## PostgreSQL migrations  
