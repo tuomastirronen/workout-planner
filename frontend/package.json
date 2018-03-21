@@ -6,7 +6,10 @@
     "axios": "^0.18.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "semantic-ui-react": "^0.79.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,6 +19,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "deep-freeze": "0.0.1",
     "eslint": "^4.19.0",
     "eslint-plugin-jest": "^21.15.0",
     "eslint-plugin-react": "^7.7.0"
