@@ -4,7 +4,9 @@
 | päivä | aika | mitä tein  |
 | :----:|:-----| :-----|
 | 19.3. | 1    | Ensimmäinen suunnittelupalaveri |
-| yht   | 1    | | 
+| 31.3  | 3    | Tietokannan suunnittelua & implementointia |
+| 31.3  | 1    | Suunnittelupalaveri |
+| yht   | 5    | | 
 
 ## Joona
 | päivä | aika | mitä tein  |
