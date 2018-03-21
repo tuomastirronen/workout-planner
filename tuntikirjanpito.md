@@ -13,4 +13,5 @@
 | :----:|:-----| :-----|
 | 19.3. | 1    | Ensimmäinen suunnittelupalaveri |
 | 20.3. | 4    | Boilerplaten teko, PostgreSQL |
-| yht   | 5    | | 
+| 21.3. | 4    | Frontend, boilerplate |
+| yht   | 9    | | 
