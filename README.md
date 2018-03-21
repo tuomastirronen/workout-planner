@@ -44,9 +44,9 @@ Tietokantana käytetään PostgreSQL tietokantaa
 
 ### Models
 * User
- * Email
- * First name
- * Last name
+  * Email
+  * First name
+  * Last name
  
 * Muscle
   * Name
