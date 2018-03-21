@@ -3,10 +3,13 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 // Set up the express app
-const app = express();
+const app = express()
+
+// use frontend code as views
+app.use(express.static('build'))
 
 // Log requests to the console.
-app.use(logger('dev'));
+app.use(logger('dev'))
 
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(bodyParser.json());
