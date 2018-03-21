@@ -59,11 +59,7 @@ module.exports = {
           });
         }
         return user
-          .update({
-            email: req.body.email || user.email,
-            first_name: req.body.first_name || user.first_name,
-            last_name: req.body.last_name || user.last_name        
-          })
+          .update(req.body, { fields: Object.keys(req.body) })
           .then(() => res.status(200).send(user))  // Send back the updated user.
           .catch((error) => res.status(400).send(error));
       })

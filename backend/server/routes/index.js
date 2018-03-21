@@ -28,4 +28,11 @@ module.exports = (app) => {
 
   // Create routine
   app.post('/api/users/:user_id/routines', routinesController.create);
+
+  // Update routine
+  app.put('/api/users/:user_id/routines/:routine_id', routinesController.update);
+
+  // Delete routine
+  app.delete('/api/todos/:todoId/items/:todoItemId', routinesController.destroy);
+
 };
