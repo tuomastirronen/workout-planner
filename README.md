@@ -45,34 +45,7 @@ Backend totetuteaan Node.js + Express
 Tietokantana käytetään PostgreSQL tietokantaa
 
 ### Models
-* User
-  * Email
-  * First name
-  * Last name
- 
-* Muscle
-  * Name
-  * Image
-  
-* Movement
-  * BELONGS TO MUSCLE
-  * Name
-  * Image
-
-* Routine
-  * HAS MANY EXERCISES
-  * Weekday
-  * Name
-
-* Exercise
-  * BELONGS TO MOVEMENT
-  * BELONGS TO EXERCISE
-  * Routine ID
-  * Movement ID
-  * Sets
-  * Repetitions
-  * Weight
-  * (Rest)
+![alt text](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/database.png)
   
 ### Views
 * Rekisteröinti
