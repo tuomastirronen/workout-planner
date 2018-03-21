@@ -1,5 +1,6 @@
 # Useful links
 ## Backend
+* https://fullstack-hy.github.io/osa3/
 * https://fullstack-hy.github.io/osa4/
 ## Frontend
 ### React & Redux
@@ -15,3 +16,5 @@
 ## Continous integration & deploy
 * https://travis-ci.org
 * https://accounts.hetzner.com/login
+## Configuration
+* linkki
