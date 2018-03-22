@@ -55,21 +55,16 @@ Tietokantana käytetään PostgreSQL tietokantaa
 #### My routines (List all routines)
 <img src="https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/my-routines.png" width="25%" height="25%">
 
-* New routine
-  * View 1 (Routine basics)
-    * Input name
-    * Select weekday
-    * Click next
-  * View 2 (Add exercise)
-    * Select muscle -> Select move
-    * Input sets
-    * Input repetitions
-    * Input weights
-    * [Repeat]
-    
-    * Register
-* Show routine (Show exercises in routine)
-  
+#### Show routine (Show exercises in routine)
+<img src="https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/routine.png" width="25%" height="25%">
+
+#### New routine
+<img src="https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/new-routine.png" width="25%" height="25%">
+
+<img src="https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/new-exercise.png" width="25%" height="25%">
+
+#### Register
+TODO
   
 ## Testaus / Tuotantoon vieminen
 Sovelluskehityksessä käytetään Travis CI:tä
