@@ -8,7 +8,9 @@
 
 ## Asennus ja käyttöönotto
 * Luo tietokanta paikalliselle PostgreSQL palvelimelle  
-`sudo -u postgres psql -c 'create database workout-planner;'`
+`createdb workout-planner-dev`
+`sequelize db:migrate`
+`sequelize db:seed:all`
 * Kloonaa tämä repositorio koneellesi  
 `git clone git@github.com:tuomastirronen/workout-planner.git`
 * Mene projektin juureen ja suorita  
