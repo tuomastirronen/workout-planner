@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'user_id',
       onDelete: 'CASCADE',
     });
+    Routine.hasMany(models.Exercise, {
+      foreignKey: 'routine_id',
+      as: 'exercises',
+    });
   };
   return Routine;
 };

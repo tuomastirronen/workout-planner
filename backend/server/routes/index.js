@@ -2,6 +2,7 @@ const usersController = require('../controllers').users;
 const routinesController = require('../controllers').routines;
 const musclesController = require('../controllers').muscles;
 const movesController = require('../controllers').moves;
+const exercisesController = require('../controllers').exercises;
 
 module.exports = (app) => {
   app.get('/api', (req, res) => res.status(200).send({
@@ -10,7 +11,7 @@ module.exports = (app) => {
 
   // User
 
-  // List all users
+  // List users
   app.get('/api/users', usersController.list);
 
   // Retrieve user
@@ -27,6 +28,12 @@ module.exports = (app) => {
 
   
   // Routine
+
+  // List routines
+  app.get('/api/users/:user_id/routines', routinesController.list);
+
+  // Retrieve routine
+  app.get('/api/users/:user_id/routines/:routine_id', routinesController.retrieve);
 
   // Create routine
   app.post('/api/users/:user_id/routines', routinesController.create);
@@ -45,5 +52,17 @@ module.exports = (app) => {
 
   // Retrieve muscle
   app.get('/api/muscles/:muscle_id', musclesController.retrieve);
+
+
+  // Exercises
+
+  // List exercises
+  app.get('/api/users/:user_id/routines/:routine_id/exercises', exercisesController.list);
+
+  // Retrieve exercise
+  app.get('/api/users/:user_id/routines/:routine_id/exercises/:exercise_id', exercisesController.retrieve);
+
+  // Create exercise
+  app.post('/api/users/:user_id/routines/:routine_id/exercises', exercisesController.create);
 
 };
