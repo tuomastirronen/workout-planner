@@ -48,17 +48,22 @@ Tietokantana käytetään PostgreSQL tietokantaa
 ![alt text](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/database.png)
   
 ### Views
-* Rekisteröinti
-* Kirjautuminen
-* Rutiini
-  * index (lista kaikista rutiineista, "viikkonäkymä")
-  * show (lista kaikista rutiiniin kuuluvista harjoituksista)
-* Harjoitus (index, show)
-* Lihas
-  * index (lista kaikista lihaksista)
-  * show (näyttää yhden lihaksen ja siihen kuuluvat liikkeet)
-* Liike
-  * show
+* Login
+* Register
+* My routines (List all routines)
+* New routine
+  * View 1 (Routine basics)
+    * Input name
+    * Select weekday
+    * Click next
+  * View 2 (Add exercise)
+    * Select muscle -> Select move
+    * Input sets
+    * Input repetitions
+    * Input weights
+    * [Repeat]
+* Show routine (Show exercises in routine)
+  
   
 ## Testaus / Tuotantoon vieminen
 Sovelluskehityksessä käytetään Travis CI:tä
