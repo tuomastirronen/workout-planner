@@ -2,6 +2,9 @@ import urllib2
 from bs4 import BeautifulSoup
 import json
 
+import datetime
+time = datetime.datetime.now().isoformat()
+
 muscles = []
 moves = []
 
@@ -17,7 +20,7 @@ for muscleid in range(1, 19): # muscle loop
 
     try:
         muscle = soup.find('div', class_='ExResult-cell ExResult-cell--nameEtc').find('div', class_='ExResult-muscleTargeted').find('a').text.strip()
-        muscles.append({'id': muscleid, 'name': muscle})
+        muscles.append({'id': muscleid, 'name': muscle, 'createdAt': time, 'updatedAt': time})
     except:
         muscleid = muscleid + 1
 
@@ -39,7 +42,7 @@ for muscleid in range(1, 19): # muscle loop
         for move in moves_a:
             move_id = move_id + 1
             name = move.find('h3').find('a').text.strip()
-            moves.append({'id': move_id, 'muscle_id': muscleid, 'name': name})
+            moves.append({'id': move_id, 'muscle_id': muscleid, 'name': name, 'createdAt': time, 'updatedAt': time})
 
 with open('data/muscles.json', 'w') as outfile:
     json.dump(muscles, outfile, indent=4)

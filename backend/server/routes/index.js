@@ -1,5 +1,7 @@
 const usersController = require('../controllers').users;
 const routinesController = require('../controllers').routines;
+const musclesController = require('../controllers').muscles;
+const movesController = require('../controllers').moves;
 
 module.exports = (app) => {
   app.get('/api', (req, res) => res.status(200).send({
@@ -33,6 +35,15 @@ module.exports = (app) => {
   app.put('/api/users/:user_id/routines/:routine_id', routinesController.update);
 
   // Delete routine
-  app.delete('/api/todos/:todoId/items/:todoItemId', routinesController.destroy);
+  app.delete('/api/users/:user_id/routines/:routine_id', routinesController.destroy);
+
+
+  // Muscles
+
+  // List all muscles
+  app.get('/api/muscles', musclesController.list);
+
+  // Retrieve muscle
+  app.get('/api/muscles/:muscle_id', musclesController.retrieve);
 
 };
