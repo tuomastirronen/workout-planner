@@ -1,9 +1,13 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors')
+
 
 // Set up the express app
 const app = express()
+
+app.use(cors())
 
 // use frontend code as views
 app.use(express.static('build'))
