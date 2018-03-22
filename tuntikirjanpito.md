@@ -10,7 +10,7 @@
 | 22.3. | 2    | Scraper + Muscles & Moves + seed data |
 | 22.3. | 1    | Exercises |
 | 22.3. | 1    | UI mockups |
-| yht   | 9    | | 
+| yht   | 10    | | 
 
 ## Joona
 | päivä | aika | mitä tein  |
