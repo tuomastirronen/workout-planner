@@ -57,7 +57,7 @@ Tietokantana käytetään PostgreSQL tietokantaa
     * Select weekday
     * Click next
   * View 2 (Add exercise)
-    * Select muscle -> Select move
+    * Select muscle -> Select move
     * Input sets
     * Input repetitions
     * Input weights
