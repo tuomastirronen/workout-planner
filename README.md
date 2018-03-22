@@ -45,12 +45,14 @@ Backend totetuteaan Node.js + Express
 Tietokantana käytetään PostgreSQL tietokantaa
 
 ### Models
-![alt text](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/database.png)
+![alt text](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/database/database.png)
   
 ### Views
 * Login
+![alt text |730,1260, 20%](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/log-in.png)
 * Register
 * My routines (List all routines)
+![alt text](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/my-routines.png)
 * New routine
   * View 1 (Routine basics)
     * Input name
