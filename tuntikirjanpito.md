@@ -8,6 +8,7 @@
 | 21.3. | 1    | Suunnittelupalaveri |
 | 21.3. | 1    | Scraper harjoitusdatalle |
 | 22.3. | 2    | Scraper + Muscles & Moves + seed data |
+| 22.3. | 1    | Exercises |
 | yht   | 8    | | 
 
 ## Joona
