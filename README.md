@@ -48,12 +48,13 @@ Tietokantana käytetään PostgreSQL tietokantaa
 ![alt text](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/database/database.png)
   
 ### Views
-* Login
-<img src="https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/log-in.png" width="50%" height="50%">
+#### Login
+<img src="https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/log-in.png" width="25%" height="25%">
 
-* Register
-* My routines (List all routines)
-![alt text](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/my-routines.png)
+
+#### My routines (List all routines)
+<img src="https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/my-routines.png" width="25%" height="25%">
+
 * New routine
   * View 1 (Routine basics)
     * Input name
@@ -65,6 +66,8 @@ Tietokantana käytetään PostgreSQL tietokantaa
     * Input repetitions
     * Input weights
     * [Repeat]
+    
+    * Register
 * Show routine (Show exercises in routine)
   
   
