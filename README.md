@@ -49,7 +49,8 @@ Tietokantana käytetään PostgreSQL tietokantaa
   
 ### Views
 * Login
-![alt text |730,1260, 20%](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/log-in.png)
+<img src="https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/log-in.png" width="50%" height="50%">
+
 * Register
 * My routines (List all routines)
 ![alt text](https://raw.githubusercontent.com/tuomastirronen/workout-planner/master/doc/ui-mockups/my-routines.png)
