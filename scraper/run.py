@@ -1,22 +1,48 @@
 import urllib2
 from bs4 import BeautifulSoup
+import json
 
+muscles = []
+moves = []
 
-for muscleid in range(1, 18): # muscle loop
+move_id = 0
+
+for muscleid in range(1, 19): # muscle loop
     finderid = 1
-    while True: # finder loop
+
+    # Get muscle
+    url = "https://www.bodybuilding.com/exercises/finder/" + str(finderid) + "/?muscleid=" + str(muscleid)
+    page = urllib2.urlopen(url)
+    soup = BeautifulSoup(page, 'html.parser')
+
+    try:
+        muscle = soup.find('div', class_='ExResult-cell ExResult-cell--nameEtc').find('div', class_='ExResult-muscleTargeted').find('a').text.strip()
+        muscles.append({'id': muscleid, 'name': muscle})
+    except:
+        muscleid = muscleid + 1
+
+    
+
+    while True: # finder loop        
 
         url = "https://www.bodybuilding.com/exercises/finder/" + str(finderid) + "/?muscleid=" + str(muscleid)
         page = urllib2.urlopen(url)
-        soup = BeautifulSoup(page, 'html.parser')
-        moves = soup.find_all('div', class_='ExResult-cell ExResult-cell--nameEtc')    
+        soup = BeautifulSoup(page, 'html.parser')        
 
-        if len(moves) == 0:
+        moves_a = soup.find_all('div', class_='ExResult-cell ExResult-cell--nameEtc')
+
+        if len(moves_a) == 0:
             break # break finder loop
 
         finderid = finderid + 1
 
-        for move in moves:
+        for move in moves_a:
+            move_id = move_id + 1
             name = move.find('h3').find('a').text.strip()
-            muscle =  move.find('div', class_='ExResult-muscleTargeted').find('a').text.strip()
-            print muscle, "->", name
+            moves.append({'id': move_id, 'muscle_id': muscleid, 'name': name})
+
+with open('data/muscles.json', 'w') as outfile:
+    json.dump(muscles, outfile, indent=4)
+
+with open('data/moves.json', 'w') as outfile:
+    json.dump(moves, outfile, indent=4)
