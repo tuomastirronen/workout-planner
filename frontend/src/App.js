@@ -1,32 +1,48 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Notification from './components/Notification'
+import MuscleList from './components/MuscleList.js'
 
 import { initializeMuscles } from './reducers/muscleReducer'
 
-//import AnecdoteList from './components/AnecdoteList'
-
+import { Container, Grid } from 'semantic-ui-react'
 
 class App extends React.Component {
-  componentDidMount () {
+  componentWillMount() {
     this.props.initializeMuscles()
   }
 
   render() {
-    //const anecdotes = this.props.store
-    console.log(this.props.initializeMuscles())
-    //console.log(this.props.initializeMuscles())
-    //console.log(initializeMuscles)
-    //console.log(this.props.initializeMuscles)
     return (
-      <div>
-        <h1>Programming anecdotes</h1>
-        <Notification />
-        
-      </div>
+      <Container>
+        <Grid columns={3}>
+          <Grid.Row>
+            <Grid.Column>
+              <div>
+                <h1>Muscles</h1>
+                <MuscleList />
+              </div>
+            </Grid.Column>
+            <Grid.Column>
+              <div>
+                <h1>Muscles</h1>
+                <MuscleList />
+              </div>
+            </Grid.Column>
+            <Grid.Column>
+              <div>
+                <h1>Muscles</h1>
+                <MuscleList />
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container>
     )
   }
 }
 
-export default connect(null, { initializeMuscles } )(App)
+export default connect(
+  null,
+  { initializeMuscles }
+)(App)

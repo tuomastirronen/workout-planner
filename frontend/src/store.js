@@ -1,15 +1,17 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension'
 
+import muscleReducer from './reducers/muscleReducer'
+import filterReducer from './reducers/filterReducer'
 
-import reducer from './reducers/muscleReducer'
+const reducer = combineReducers({
+  muscles: muscleReducer,
+  filter: filterReducer
+})
 
 const store = createStore(
   reducer,
-  composeWithDevTools(
-    applyMiddleware(thunk)
-  )
+  applyMiddleware(thunk)
 )
 
 export default store

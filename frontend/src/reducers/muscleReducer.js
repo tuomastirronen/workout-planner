@@ -1,45 +1,23 @@
-import muscles from '../services/muscles'
+import muscleService from '../services/muscles'
 
-const reducer = (store = [], action) => {
-  console.log('ACTION:', action)
-
-  if (action.type==='VOTE') {
-    const old = store.filter(a => a.id !==action.id)
-    const voted = store.find(a => a.id === action.id)
-
-    return [...old, { ...voted, votes: voted.votes+1 } ]
+const muscleReducer = (state = [], action) => {
+  console.log('ACTION: ', action)
+  switch (action.type) {
+  case 'INIT_NOTES':
+    return action.data
+  default:
+    return state
   }
-  if (action.type === 'CREATE') {
-    console.log(action.content)
-    return store.concat(action.content)
-  }
-
-  if (action.type === 'INITIALIZE') {
-    return store = action.content
-  }
-
-  return store
 }
-
-// export const initializeMuscles = (content) => {
-//   return async (dispatch) => {
-//     const content = await muscles.getAll()
-//     //console.log(content)
-//     dispatch({
-//       type: 'INITIALIZE',
-//       content
-//     })
-//   }
-// }
 
 export const initializeMuscles = () => {
   return async (dispatch) => {
-    const m = await muscles.getAll()
+    const muscles = await muscleService.getAllMuscles()
     dispatch({
-      type: 'INITIALIZE',
-      data: m
+      type: 'INIT_NOTES',
+      data: muscles
     })
   }
 }
 
-export default reducer
+export default muscleReducer
