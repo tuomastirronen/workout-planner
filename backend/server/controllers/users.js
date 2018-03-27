@@ -2,6 +2,18 @@ const User = require('../models').User;
 const Routine = require('../models').Routine;
 
 module.exports = {
+  login(req, res) {
+    console.log('backend: ', req.body)
+    return User
+      .findAll({
+        where: {
+          email: req.body.username
+        }
+      })
+      .then(user => res.status(200).send(user))
+      .catch(error => res.status(400).send(error))
+  },
+
   list(req, res) {
     return User
       .findAll({
@@ -11,25 +23,25 @@ module.exports = {
         }],
       })
       .then(users => res.status(200).send(users))
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(400).send(error))
   },
 
   retrieve(req, res) {
     return User
       .findById(req.params.user_id, {
         include: [{
-            model: Routine,
-            as: 'routines',
+          model: Routine,
+          as: 'routines',
         }],
-        })
-        .then(user => {
+      })
+      .then(user => {
         if (!user) {
-            return res.status(404).send({
+          return res.status(404).send({
             message: 'User Not Found',
-            });
+          })
         }
         return res.status(200).send(user);
-        })
+      })
       .catch(error => res.status(400).send(error));
   },
 
