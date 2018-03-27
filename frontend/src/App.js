@@ -46,6 +46,11 @@ class App extends React.Component {
     }
   }
 
+  logout = (event) => {
+    event.preventDefault()
+    this.setState({ user: null })
+  }
+
 
   handlePasswordChange = (event) => {
     this.setState({ password: event.target.value })
@@ -83,12 +88,18 @@ class App extends React.Component {
         </div>
       </Grid.Column>
     )
+    const logoutButton = () => (
+      <button onClick={this.logout}>Logout</button>
+    )
 
     const muscleList = () => (
       <Grid.Column>
+        {logoutButton()}
+        <h1>Muslces</h1>
         <MuscleList />
       </Grid.Column>
     )
+
     return (
       <Container>
         <Grid columns={1}>
