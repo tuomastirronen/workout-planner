@@ -89,7 +89,10 @@ class App extends React.Component {
       </Grid.Column>
     )
     const logoutButton = () => (
-      <button onClick={this.logout}>Logout</button>
+      <div>
+        {this.state.user.map(a => a.email)} is logged in
+        <button onClick={this.logout}>Logout</button>
+      </div>
     )
 
     const muscleList = () => (
