@@ -5,7 +5,7 @@ import MuscleList from './components/MuscleList.js'
 import LoginForm from './components/LoginForm.js'
 
 import { initializeMuscles } from './reducers/muscleReducer'
-import { loginUser } from './reducers/userReducer'
+import { loginUser, logoutUser } from './reducers/userReducer'
 
 import loginService from './services/login'
 
@@ -22,7 +22,8 @@ class App extends React.Component {
 
   logout = (event) => {
     event.preventDefault()
-    this.setState({ user: null })
+    console.log(this.props.user)
+    this.props.logoutUser()
   }
 
   render() {
@@ -67,5 +68,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  { initializeMuscles, loginUser }
+  { initializeMuscles, loginUser, logoutUser }
 )(App)

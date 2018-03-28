@@ -6,7 +6,7 @@ const loginReducer = (state = null, action) => {
   case 'LOGIN':
     return action.data
   case 'LOGOUT':
-    return action.data
+    return null
   case 'REGISTER':
     return action.data
   default:
@@ -21,6 +21,17 @@ export const loginUser = (credentials) => {
     dispatch({
       type: 'LOGIN',
       data: user
+    })
+  }
+}
+
+export const logoutUser = (credentials) => {
+  console.log('reducer ', credentials)
+  return async (dispatch) => {
+    //const user = await loginService.login(credentials)
+    dispatch({
+      type: 'LOGOUT',
+      data: null
     })
   }
 }
