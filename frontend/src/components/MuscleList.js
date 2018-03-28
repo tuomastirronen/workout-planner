@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Muscle from './Muscle'
 
-const NoteList = (props) => (
+const MuscleList = (props) => (
   <ul>
     {props.visibleMuscles.map(muscle =>
       <Muscle
@@ -30,4 +30,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-)(NoteList)
+)(MuscleList)

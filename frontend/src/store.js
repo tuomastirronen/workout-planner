@@ -3,10 +3,12 @@ import thunk from 'redux-thunk'
 
 import muscleReducer from './reducers/muscleReducer'
 import filterReducer from './reducers/filterReducer'
+import userReducer from './reducers/userReducer'
 
 const reducer = combineReducers({
   muscles: muscleReducer,
-  filter: filterReducer
+  filter: filterReducer,
+  user: userReducer
 })
 
 const store = createStore(
