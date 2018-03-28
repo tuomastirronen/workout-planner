@@ -1,7 +1,13 @@
 const User = require('../models').User;
 const Routine = require('../models').Routine;
 
+const bcrypt = require('bcrypt')
+
 module.exports = {
+  register(req, res) {
+    console.log('registering user...')
+  },
+
   login(req, res) {
     console.log('backend: ', req.body)
     return User

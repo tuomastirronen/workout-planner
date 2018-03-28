@@ -20,5 +20,5 @@
 | 20.3. | 4    | Boilerplaten teko, PostgreSQL |
 | 21.3. | 4    | Frontend, boilerplate |
 | 21.3. | 6    | Frontend |
-| 27.3. | 3    | Login |
-| yht   | 18   | | 
+| 27.3. | 6    | Login Redux |
+| yht   | 21   | | 
