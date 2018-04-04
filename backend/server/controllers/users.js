@@ -18,6 +18,9 @@ exports.login = async (req, res) => {
       }
     })
 
+    console.log(req.body.username)
+    console.log(user)
+
     console.log('backend: ', req.body)
     console.log('req:', req.body.password)
     console.log(user)
