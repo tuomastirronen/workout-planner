@@ -21,4 +21,5 @@
 | 21.3. | 4    | Frontend, boilerplate |
 | 21.3. | 6    | Frontend |
 | 27.3. | 6    | Login Redux |
-| yht   | 21   | | 
+| 28.3. | 2    | Logout Redux |
+| yht   | 23   | | 

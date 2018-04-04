@@ -7,9 +7,8 @@ import LoginForm from './components/LoginForm.js'
 import { initializeMuscles } from './reducers/muscleReducer'
 import { loginUser, logoutUser } from './reducers/userReducer'
 
-import loginService from './services/login'
-
 import { Container, Grid } from 'semantic-ui-react'
+import RoutineList from './components/RoutineList.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +16,16 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    this.props.initializeMuscles()
+    //this.props.initializeMuscles()
+
+    const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    console.log('user: ', window.localStorage.getItem('loggedUser'))
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      console.log('json user: ', user)
+      this.props.loginUser({ user })
+      //noteService.setToken(user.token)
+    }
   }
 
   logout = (event) => {
@@ -51,7 +59,7 @@ class App extends React.Component {
             {console.log(this.props.user)}
             { this.props.user === null ?
               <LoginForm /> :
-              muscleList()
+              <p>asd</p>
             }
           </Grid.Row>
         </Grid>

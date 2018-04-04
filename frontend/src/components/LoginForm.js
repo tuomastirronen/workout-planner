@@ -11,9 +11,17 @@ class LoginForm extends React.Component {
     event.preventDefault()
     //const user = event.target.username.value
     //let password = event.target.password.value
-    this.props.loginUser( { username: event.target.username.value })
+    this.props.loginUser( {
+      username: event.target.username.value,
+      password: event.target.password.value
+    })
+
+    // debug
+    window.localStorage.setItem('loggedUser', JSON.stringify({ username: event.target.username.value }))
+
     console.log(event.target.username.value)
     event.target.username.value = ''
+    event.target.password.value = ''
   }
 
   render() {
