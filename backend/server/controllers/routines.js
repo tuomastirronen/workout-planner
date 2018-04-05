@@ -7,11 +7,7 @@ module.exports = {
       .findAll({
         where: {          
           user_id: req.params.user_id
-        },
-        include: [{
-          model: Exercise,
-          as: 'exercises',
-        }],
+        }
       })
       .then(routine => {
       if (!routine) {

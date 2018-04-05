@@ -6,6 +6,15 @@ module.exports = (sequelize, DataTypes) => {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING
   }, {});
+
+  // Hide password
+  User.prototype.toJSON =  function () {
+    var values = Object.assign({}, this.get());
+  
+    delete values.password;
+    return values;
+  }
+
   User.associate = function(models) {
     User.hasMany(models.Routine, {
       foreignKey: 'user_id',
