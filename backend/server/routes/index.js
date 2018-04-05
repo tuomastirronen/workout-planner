@@ -69,4 +69,7 @@ module.exports = (app) => {
   // Create exercise
   app.post('/api/users/:user_id/routines/:routine_id/exercises', exercisesController.create)
 
+  // Log exercise
+  app.post('/api/users/:user_id/routines/:routine_id/exercises/:exercise_id/logs', exercisesController.log)
+
 }
