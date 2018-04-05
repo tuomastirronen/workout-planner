@@ -13,60 +13,60 @@ module.exports = (app) => {
   // Login
   app.post('/api/login', usersController.login)
 
-//   // User
+  // User
 
-//   // List users
-//   app.get('/api/users', usersController.list)
+  // List users
+  app.get('/api/users', usersController.list)
 
-//   // Retrieve user
-//   app.get('/api/users/:user_id', usersController.retrieve)
+  // Retrieve user
+  app.get('/api/users/:user_id', usersController.retrieve)
 
-//   // Create user
-//   app.post('/api/users', usersController.create)
+  // Create user
+  app.post('/api/users', usersController.create)
 
-//   // Update user
-//   app.put('/api/users/:user_id', usersController.update)
+  // Update user
+  app.put('/api/users/:user_id', usersController.update)
 
-//   // Delete user
-//   app.delete('/api/users/:user_id', usersController.destroy)
-
-
-//   // Routine
-
-//   // List routines
-//   app.get('/api/users/:user_id/routines', routinesController.list)
-
-//   // Retrieve routine
-//   app.get('/api/users/:user_id/routines/:routine_id', routinesController.retrieve)
-
-//   // Create routine
-//   app.post('/api/users/:user_id/routines', routinesController.create)
-
-//   // Update routine
-//   app.put('/api/users/:user_id/routines/:routine_id', routinesController.update)
-
-//   // Delete routine
-//   app.delete('/api/users/:user_id/routines/:routine_id', routinesController.destroy)
+  // Delete user
+  app.delete('/api/users/:user_id', usersController.destroy)
 
 
-//   // Muscles
+  // Routine
 
-//   // List all muscles
-//   app.get('/api/muscles', musclesController.list)
+  // List routines
+  app.get('/api/users/:user_id/routines', routinesController.list)
 
-//   // Retrieve muscle
-//   app.get('/api/muscles/:muscle_id', musclesController.retrieve)
+  // Retrieve routine
+  app.get('/api/users/:user_id/routines/:routine_id', routinesController.retrieve)
+
+  // Create routine
+  app.post('/api/users/:user_id/routines', routinesController.create)
+
+  // Update routine
+  app.put('/api/users/:user_id/routines/:routine_id', routinesController.update)
+
+  // Delete routine
+  app.delete('/api/users/:user_id/routines/:routine_id', routinesController.destroy)
 
 
-//   // Exercises
+  // Muscles
 
-//   // List exercises
-//   app.get('/api/users/:user_id/routines/:routine_id/exercises', exercisesController.list)
+  // List all muscles
+  app.get('/api/muscles', musclesController.list)
 
-//   // Retrieve exercise
-//   app.get('/api/users/:user_id/routines/:routine_id/exercises/:exercise_id', exercisesController.retrieve)
+  // Retrieve muscle
+  app.get('/api/muscles/:muscle_id', musclesController.retrieve)
 
-//   // Create exercise
-//   app.post('/api/users/:user_id/routines/:routine_id/exercises', exercisesController.create)
+
+  // Exercises
+
+  // List exercises
+  app.get('/api/users/:user_id/routines/:routine_id/exercises', exercisesController.list)
+
+  // Retrieve exercise
+  app.get('/api/users/:user_id/routines/:routine_id/exercises/:exercise_id', exercisesController.retrieve)
+
+  // Create exercise
+  app.post('/api/users/:user_id/routines/:routine_id/exercises', exercisesController.create)
 
 }
