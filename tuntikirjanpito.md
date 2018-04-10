@@ -12,7 +12,8 @@
 | 22.3. | 1    | UI mockups |
 | 22.3. | 1    | Seed data for example user |
 | 5.4.  | 1    | Taulu + route harjoituksen suorittamiselle (Log) |
-| yht   | 12    | | 
+| 10.4. | 3    | Mocha-testaukseen tutustuminen + User-yksikkötestit |
+| yht   | 15    | | 
 
 ## Joona
 | päivä | aika | mitä tein  |
