@@ -1,13 +1,7 @@
+const util = require('../util')
 const sequelize = require('sequelize')
 const User = require('../../server/models').User
 var assert = require('assert');
-
-
-
-User.destroy({ where: {}, truncate: true, cascade: true })
-  .then(function(){
-    console.log(arguments) // { '0': 0 } - why not same as in bulkUpdate?
-  })
 
 describe('user', function () {
 
@@ -37,6 +31,8 @@ describe('user', function () {
   });
 
   it('create valid user', function (done) {
+
+    util.truncateUser();
 
     User.create({
       email: 'tuomas.tirronen@helsinki.fi',
