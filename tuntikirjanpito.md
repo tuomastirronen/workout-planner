@@ -14,7 +14,8 @@
 | 5.4.  | 1    | Taulu + route harjoituksen suorittamiselle (Log) |
 | 10.4. | 3    | Mocha-testaukseen tutustuminen + User model testit |
 | 10.4. | 2    | User controller testit |
-| yht   | 17    | | 
+| 11.4. | 1    | lisää User controller testejä |
+| yht   | 18    | | 
 
 ## Joona
 | päivä | aika | mitä tein  |
