@@ -1,3 +1,5 @@
+process.env['SECRET'] = 'EWIGHIEWGEWKNGQWJGBEWUGDSOREGREHINW'
+
 const User = require('../../server/models').User
 const factory = require('../factories/user')
 const util = require('../util')
@@ -45,7 +47,9 @@ describe('users controller', () => {
             .end((err, res) => {
                 res.should.have.status(201);
                 res.body.should.be.a('object');
+                res.body.should.have.property('email').eql(user.email);
                 res.body.should.have.property('first_name').eql(user.first_name);
+                res.body.should.have.property('last_name').eql(user.last_name);
             done();
             });
         util.truncateUser();
@@ -78,6 +82,36 @@ describe('users controller', () => {
             .end((err, res) => {
                 res.should.have.status(204);
                 done();
+            });
+        })
+        util.truncateUser();
+    });
+
+    it('should login with correct password', (done) => {
+        util.truncateUser();
+        var user = factory.User()
+        User.create(user).then( function (data) {
+            chai.request(app)
+            .post('/api/login/')
+            .send({username: user.email, password: 'salasana'})
+            .end((err, res) => {
+                res.should.have.status(200);      
+            done();
+            });
+        })
+        util.truncateUser();
+    });
+
+    it('should not login with incorrect password', (done) => {
+        util.truncateUser();
+        var user = factory.User()
+        User.create(user).then( function (data) {
+            chai.request(app)
+            .post('/api/login/')
+            .send({username: user.email, password: 'vaarasalasana'})
+            .end((err, res) => {
+                res.should.have.status(401);      
+            done();
             });
         })
         util.truncateUser();
