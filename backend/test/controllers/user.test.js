@@ -50,4 +50,36 @@ describe('users controller', () => {
             });
         util.truncateUser();
     });
+
+
+    it('should modify a user', (done) => {
+        util.truncateUser();               
+        var user = factory.User()
+        User.create(user).then( function (data) {
+            chai.request(app)
+            .put('/api/users/' + data.id)
+            .send({first_name: 'modified', last_name: 'user'})
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.should.have.property('first_name').eql('modified');
+                res.body.should.have.property('last_name').eql('user');
+                done();
+            });
+        })
+        util.truncateUser();
+    });
+
+    it('should destroy user', (done) => {
+        util.truncateUser();
+        var user = factory.User()
+        User.create(user).then( function (data) {
+            chai.request(app)
+            .delete('/api/users/' + data.id)
+            .end((err, res) => {
+                res.should.have.status(204);
+                done();
+            });
+        })
+        util.truncateUser();
+    });
 });

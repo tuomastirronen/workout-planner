@@ -1,6 +1,7 @@
 const faker = require('faker')
 
 module.exports = {
+    // return valid user json
     User () {    
         return {            
             email: faker.internet.email(),
