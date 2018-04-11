@@ -3,7 +3,7 @@ const loginUrl = 'http://localhost:3001/api/login'
 //const userUrl = 'http://localhost:3001/api/users/'
 
 const login = async (credentials) => {
-  console.log('service ', credentials)
+  //console.log('service ', credentials)
   //console.log('username: ', credentials.username)
   //console.log('password: ', credentials.password)
   // find user by email

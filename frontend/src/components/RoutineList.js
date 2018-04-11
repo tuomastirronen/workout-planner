@@ -1,31 +1,56 @@
 import React from 'react'
 import { connect } from 'react-redux'
-//import Muscle from './Muscle'
+import Routine from './Routine'
 import { listRoutines } from './../reducers/routineReducer'
 
 
-const RoutineList = (props) => (
-  // <ul>
-  //   {props.visibleMuscles.map(muscle =>
-  //     <Muscle
-  //       key={muscle.id}
-  //       muscle={muscle}
-  //     />
-  //   )}
-  // </ul>
-  <div>
-    <h1>Routines</h1>
-    <p>{console.log(this.props.listRoutines())}</p>
-    <p>{console.log(props.routines)}</p>
-  </div>
-)
+class RoutineList extends React.Component {
+  
+
+  render(props) {
+    const routines = props.listRoutines(1)
+    return (
+      <div>
+        <h1>Routines</h1>
+        <ul>
+          {routines.map(routine =>
+            <Routine
+              key={routine.id}
+              routine={routine}
+            />
+          )}
+        </ul>
+      </div>
+    )
+  }
+}
+
+// const RoutineList = (props) => (
+//   <div>
+//     <h1>Routines</h1>
+//     <ul>
+//       {props.listRoutines(1).map(routine =>
+//         <Routine
+//           key={routine.id}
+//           routine={routine}
+//         />
+//       )}
+//     </ul>
+//   </div>
+// )
 
 const mapStateToProps = (state) => {
   return {
-    routines: state.routines
+    routines: state.routines,
+    user: state.user
   }
+}
+
+const mapDispatchToProps  = {
+  listRoutines
 }
 
 export default connect(
   mapStateToProps,
+  mapDispatchToProps,
 )(RoutineList)

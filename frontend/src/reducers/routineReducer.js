@@ -1,7 +1,7 @@
 import routineService from '../services/routines'
 
 const routineReducer = (state = [], action) => {
-  console.log('ACTION: ', action)
+  console.log('ACTION ROUTINE: ', action)
   switch (action.type) {
   case 'LIST':
     return action.data
@@ -11,13 +11,15 @@ const routineReducer = (state = [], action) => {
 }
 
 export const listRoutines = (id) => {
-  console.log('reducer ', id)
+  console.log('list routines reducer')
+  console.log('reducer jee', id)
   return async (dispatch) => {
-    const user = await routineService.getAllRoutines(id)
+    const routines = await routineService.getAllRoutines(id)
     dispatch({
-      type: 'LOGIN',
-      data: user
+      type: 'LIST',
+      data: routines
     })
+    console.log('wtf')
   }
 }
 
