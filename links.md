@@ -16,6 +16,7 @@
 * https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize
 ## Testing
 * https://fullstack-hy.github.io/osa5/
+* https://scotch.io/tutorials/test-a-node-restful-api-with-mocha-and-chai
 ## Continous integration & deploy
 * https://travis-ci.org
 * https://accounts.hetzner.com/login

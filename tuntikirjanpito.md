@@ -11,7 +11,11 @@
 | 22.3. | 1    | Exercises |
 | 22.3. | 1    | UI mockups |
 | 22.3. | 1    | Seed data for example user |
-| yht   | 11    | | 
+| 5.4.  | 1    | Taulu + route harjoituksen suorittamiselle (Log) |
+| 10.4. | 3    | Mocha-testaukseen tutustuminen + User model testit |
+| 10.4. | 2    | User controller testit |
+| 11.4. | 1    | lisää User controller testejä |
+| yht   | 18    | | 
 
 ## Joona
 | päivä | aika | mitä tein  |

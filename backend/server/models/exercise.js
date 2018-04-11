@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'routine_id',
       onDelete: 'CASCADE',
     });
+    Exercise.hasMany(models.Log, {
+      foreignKey: 'exercise_id',
+      as: 'logs',
+    });
   };
   return Exercise;
 };

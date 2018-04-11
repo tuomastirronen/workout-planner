@@ -1,11 +1,20 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var User = sequelize.define('User', {
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    first_name: DataTypes.STRING,
+    email: { type: DataTypes.STRING, allowNull: false, unique: true },
+    password: { type: DataTypes.STRING, allowNull: false },
+    first_name: { type: DataTypes.STRING, allowNull: false },
     last_name: DataTypes.STRING
   }, {});
+
+  // Hide password
+  User.prototype.toJSON =  function () {
+    var values = Object.assign({}, this.get());
+  
+    delete values.password;
+    return values;
+  }
+
   User.associate = function(models) {
     User.hasMany(models.Routine, {
       foreignKey: 'user_id',

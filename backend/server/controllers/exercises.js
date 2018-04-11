@@ -1,4 +1,5 @@
 const Exercise = require('../models').Exercise;
+const Log = require('../models').Log;
 
 module.exports = {
   retrieve(req, res) {
@@ -81,4 +82,33 @@ module.exports = {
       })
       .catch(error => res.status(400).send(error));
   },
+
+  log(req, res) {
+    return Exercise
+      .find({
+        where: {
+          id: req.params.exercise_id,
+          routine_id: req.params.routine_id,
+        }
+      })
+      .then(exercise => {
+        if (!exercise) {
+          return res.status(404).send({
+            message: 'Exercise Not Found',
+          });
+        }
+
+        Log.create({
+          exercise_id: exercise.id,          
+          sets: req.body.sets || exercise.sets,
+          repetitions: req.body.repetitions || exercise.repetitions,
+          weight: req.body.weight || exercise.weight
+        })
+        .then(log => res.status(201).send(log))
+        .catch(error => res.status(400).send(error));
+  
+      })      
+      .catch(error => res.status(400).send(error));
+  },
+
 };
