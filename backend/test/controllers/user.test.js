@@ -1,14 +1,11 @@
-//During the test the env variable is set to test
-process.env.NODE_ENV = 'test';
-
 const User = require('../../server/models').User
+const factory = require('../factories/user')
 const util = require('../util')
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let app = require('../../app');
 let should = chai.should();
 chai.use(chaiHttp);
-
 
 describe('users controller', () => {
 
@@ -17,51 +14,40 @@ describe('users controller', () => {
             .get('/api/users')
             .end((err, res) => {
                 res.should.have.status(200);
-                res.body.should.be.a('array');
-                // res.body.length.should.be.eql(0);
+                res.body.should.be.a('array');                
             done();
             });
     });
 
-    it('retrieve user', (done) => {
-        util.truncateUser();
-        var id;
-        var user = User.create({            
-            email: 'tuomas.tirronen@helsinki.fi',
-            first_name: 'Tuomas',
-            last_name: 'Tirronen',
-            password: 'asdf'
-          }).then( function (user) {
-            console.log("user created")
-            
+    it('should retrieve user', (done) => {
+        util.truncateUser();        
+        var user = factory.User()
+        User.create(user).then( function (data) {
             chai.request(app)
-            .get('/api/users/' + user.id)            
+            .get('/api/users/' + data.id)            
             .end((err, res) => {            
                 res.should.have.status(200);
                 res.body.should.be.a('object');    
-                res.body.should.have.property('first_name').eql('Tuomas');
+                res.body.should.have.property('first_name').eql(data.first_name);
                 done();
             });
           })
+        util.truncateUser();
     });
 
     
-    // it('create user', (done) => {
-    //     let user = {
-    //         title: "The Lord of the Rings",
-    //         author: "J.R.R. Tolkien",
-    //         year: 1954
-    //     }
-    //     chai.request(server)
-    //         .post('/user')
-    //         .send(user)
-    //         .end((err, res) => {
-    //             res.should.have.status(200);
-    //             res.body.should.be.a('object');
-    //             res.body.should.have.property('errors');
-    //             res.body.errors.should.have.property('pages');
-    //             res.body.errors.pages.should.have.property('kind').eql('required');
-    //         done();
-    //         });
-    // });
+    it('should create a valid user', (done) => {
+        util.truncateUser();
+        var user = factory.User()        
+        chai.request(app)
+            .post('/api/users/')
+            .send(user)
+            .end((err, res) => {
+                res.should.have.status(201);
+                res.body.should.be.a('object');
+                res.body.should.have.property('first_name').eql(user.first_name);
+            done();
+            });
+        util.truncateUser();
+    });
 });

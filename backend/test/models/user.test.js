@@ -1,53 +1,49 @@
 const util = require('../util')
+const factory = require('../factories/user')
 const sequelize = require('sequelize')
 const User = require('../../server/models').User
 var assert = require('assert');
 
-describe('user', function () {
+describe('user model', function () {
 
-  it('create user w/o password', function (done) {
-    User.create({
-      email: 'tuomas.tirronen@helsinki.fi',
-      first_name: 'Tuomas',
-      last_name: 'Tirronen',      
-    }).then( function (user) {      
-      done("password cannot be null");
+  it('should not create user w/o password', function (done) {
+    var user = factory.User()
+    user.password = null
+    User.create(user).then( function (data) {      
+      done(new Error("should not create user without password"))
     })
     .catch(error => {      
       done()
-    });
+    });    
   });
 
-  it('create user w/o email', function (done) {
-    User.create({      
-      first_name: 'Tuomas',
-      last_name: 'Tirronen',      
-    }).then( function (user) {      
-      done("email cannot be null");
+  it('should not create user w/o email', function (done) {
+    var user = factory.User()
+    user.email = null
+    User.create(user).then( function (data) { 
+      done(new Error("should not create user without email"))
     })
     .catch(error => {      
-      done()
+      done();
     });
   });
 
-  it('create valid user', function (done) {
+  it('should create valid user', function (done) {
 
     util.truncateUser();
-
-    User.create({
-      email: 'tuomas.tirronen@helsinki.fi',
-      first_name: 'Tuomas',
-      last_name: 'Tirronen',
-      password: "$2a$10$z.O/ZrKNkCU9nq36NC9J2.o4GtfH8TfnP37lZq65wlvmUrbT0Bd8G"
-    }).then( function (user) {
-      assert.equal(user.email, 'tuomas.tirronen@helsinki.fi');
-      assert.equal(user.first_name, 'Tuomas');
-      assert.equal(user.last_name, 'Tirronen');      
+    var user = factory.User()
+    User.create(user).then( function (data) {
+      assert.equal(data.email, user.email);
+      assert.equal(data.first_name, user.first_name);
+      assert.equal(data.last_name, user.last_name);      
       done();
     })
     .catch(error => {
       done(error)
     });
+
+    util.truncateUser();
+    
   });
 
 
