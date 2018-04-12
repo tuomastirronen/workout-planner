@@ -7,12 +7,6 @@ class Routine extends React.Component {
   componentDidMount () {
     console.log('Routine did mount')
   }
-  
-  // showRoutine = (event) => {
-  //   //event.preventDefault()
-  //   this.props.showRoutine(event.target.note.value)
-  //   event.target.note.value = ''
-  // }
 
   showRoutineById = () => {
     console.log('showRoutineById')

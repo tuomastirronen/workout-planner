@@ -51,7 +51,7 @@ class App extends React.Component {
 
     const logoutButton = () => (
       <div>
-        {this.props.user.map(a => a.email)} is logged in
+        KÄYTTÄJÄTUNNUS.EMAIL is logged in
         <button onClick={this.logout}>Logout</button>
       </div>
     )
@@ -65,11 +65,14 @@ class App extends React.Component {
     )
 
     return (
-      <Container style={{ paddingTop: '5em' }}>        
-            { this.props.user === null ?
-              <LoginForm /> :
-              <RoutineList />
-            }                  
+      <Container style={{ paddingTop: '5em' }}>
+        { this.props.user === null ?
+          <LoginForm /> :
+          <div>
+            { logoutButton() }
+            <RoutineList />
+          </div>
+        }
       </Container>
     )
   }

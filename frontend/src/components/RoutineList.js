@@ -28,14 +28,14 @@ class RoutineList extends React.Component {
 
     return (
       <Container>
-        <Header as='h2' color='teal' textAlign='center'>              
+        <Header as='h2' color='teal' textAlign='center'>
           {' '}My Routines
         </Header>
         {this.props.routines.map(routine =>
-            <Routine
-              key={routine.id}
-              routine={routine}
-            />
+          <Routine
+            key={routine.id}
+            routine={routine}
+          />
         )}
       </Container>
     )
