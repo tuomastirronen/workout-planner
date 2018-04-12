@@ -5,30 +5,6 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
 module.exports = {
-  // TODO
-  // register(req, res) {
-  //   console.log('registering user...')
-  //   try {
-  //     const body = req.body
-
-  //     const saltRounds = 10
-  //     //const passwordHash = await bcrypt.hash(body.password, saltRounds)
-
-  //     const user = new User({
-  //       username: body.username,
-  //       name: body.name,
-  //       password: passwordHash
-  //     })
-
-  //     const savedUser = await user.save()
-
-  //     res.json(savedUser)
-  //   } catch (exception) {
-  //     console.log(exception)
-  //     res.status(500).json({ error: 'something went wrong...' })
-  //   }
-  // },
-
   async login(req, res) {
     try {    
       const user = await User.findOne({ 
