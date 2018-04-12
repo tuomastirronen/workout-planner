@@ -37,12 +37,8 @@ module.exports = {
         }
       })
 
-      const passwordCorrect = user === null ?
-        false :
-        await bcrypt.compare(req.body.password, user.password)
-  
-      if (!(user && passwordCorrect)) {       
-        return res.status(401).send({ error: 'invalid username or password' })
+      if (!(user && user.authenticate(req.body.password))) {
+        return res.status(401).send({ error: 'Invalid username or password' })
       }
   
       const userForToken = {
@@ -96,10 +92,14 @@ module.exports = {
         email: req.body.email,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        password: req.body.password
+        password: req.body.password,
+        password_confirmation: req.body.password_confirmation
       })
       .then(user => res.status(201).send(user))
-      .catch(error => res.status(400).send(error));
+      .catch(error => {
+        console.log(error)
+        res.status(400).send(error)
+      });
   },
 
   update(req, res) {
