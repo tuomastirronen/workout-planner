@@ -5,6 +5,7 @@ import MuscleList from './components/MuscleList.js'
 import LoginForm from './components/LoginForm.js'
 
 import { initializeMuscles } from './reducers/muscleReducer'
+import { initializeRoutines } from './reducers/routineReducer'
 import { loginUser, logoutUser } from './reducers/userReducer'
 
 import { Container, Grid } from 'semantic-ui-react'
@@ -17,6 +18,8 @@ class App extends React.Component {
 
   componentWillMount() {
     //this.props.initializeMuscles()
+    //console.log('mount: ', this.props.user)
+    //this.props.initializeRoutines(1)
 
     // const loggedUserJSON = window.localStorage.getItem('loggedUser')
     // console.log('user: ', window.localStorage.getItem('loggedUser'))
@@ -75,5 +78,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  { initializeMuscles, loginUser, logoutUser }
+  { loginUser, logoutUser }
 )(App)
