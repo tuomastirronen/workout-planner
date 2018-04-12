@@ -31,6 +31,15 @@ class App extends React.Component {
     //}
   }
 
+  componentDidMount() {
+    console.log("did mount")
+    const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      console.log(user)      
+    }
+  }
+
   logout = (event) => {
     event.preventDefault()
     console.log(this.props.user)

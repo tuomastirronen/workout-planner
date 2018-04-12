@@ -28,7 +28,7 @@ class Routine extends React.Component {
         attached
         header={this.props.routine.weekday}
         content={this.props.routine.name}
-        icon='help circle'
+        icon='content'
         info
       />
     )
