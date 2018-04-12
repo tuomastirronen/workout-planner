@@ -3,7 +3,12 @@ import React from 'react'
 const Routine = ({ routine }) => {
   return (
     <li>
-      {routine.name}
+      <div>
+        day: {routine.weekday} name: {routine.name}
+      </div>
+      <div>
+        start
+      </div>
     </li>
   )
 }

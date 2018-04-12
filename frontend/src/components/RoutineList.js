@@ -1,19 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Routine from './Routine'
-import { listRoutines } from './../reducers/routineReducer'
+import { listRoutines, showRoutine } from './../reducers/routineReducer'
 
 
 class RoutineList extends React.Component {
-  
+  componentDidMount () {
+    //console.log('routineList user: ', this.props.user)
+    this.props.listRoutines(this.props.user.user.id)
+  }
 
-  render(props) {
-    const routines = props.listRoutines(1)
+  render () {
+    
     return (
       <div>
-        <h1>Routines</h1>
+        <h1>My Routines</h1>
         <ul>
-          {routines.map(routine =>
+          {this.props.routines.map(routine =>
             <Routine
               key={routine.id}
               routine={routine}
@@ -24,6 +27,20 @@ class RoutineList extends React.Component {
     )
   }
 }
+
+// const RoutineList = (props) => (
+//   <div>
+//     <h1>My Routines</h1>
+//     <ul>
+//       {props.routines.map(routine =>
+//         <Routine
+//           key={routine.id}
+//           routine={routine}
+//         />
+//       )}
+//     </ul>
+//   </div>
+// )
 
 // const RoutineList = (props) => (
 //   <div>
@@ -46,11 +63,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps  = {
-  listRoutines
-}
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  { listRoutines }
 )(RoutineList)

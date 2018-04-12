@@ -27,4 +27,6 @@
 | 21.3. | 6    | Frontend |
 | 27.3. | 6    | Login Redux |
 | 28.3. | 2    | Logout Redux |
-| yht   | 23   | | 
+| 10.4. | 4    | Connect redux |
+| 11.4. | 2    | Connect Redux |
+| yht   | 29   | | 
