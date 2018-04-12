@@ -1,16 +1,56 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { showRoutine } from './../reducers/routineReducer'
 import { Message } from 'semantic-ui-react'
 
-const Routine = ({ routine }) => {
-  return (    
-    <Message
-      attached
-      header={routine.weekday}
-      content={routine.name}
-      icon='help circle'
-      info
-    />
-  )
+class Routine extends React.Component {
+  componentDidMount () {
+    console.log('Routine did mount')
+  }
+  
+  // showRoutine = (event) => {
+  //   //event.preventDefault()
+  //   this.props.showRoutine(event.target.note.value)
+  //   event.target.note.value = ''
+  // }
+
+  showRoutineById = () => {
+    console.log('showRoutineById')
+    console.log(this.props.routine.id)
+    this.props.showRoutine(this.props.user.user.id, this.props.routine.id)
+  }
+
+  render () {
+
+    return (
+      <Message
+        onClick={this.showRoutineById}
+        attached
+        header={this.props.routine.weekday}
+        content={this.props.routine.name}
+        icon='help circle'
+        info
+      />
+    )
+  }
 }
 
-export default Routine
+// const Routine = ({ routine }) => {
+//   return (
+
+//   )
+// }
+
+const mapStateToProps = (state) => {
+  return {
+    routines: state.routines,
+    user: state.user
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  { showRoutine }
+)(Routine)
+
+//export default Routine

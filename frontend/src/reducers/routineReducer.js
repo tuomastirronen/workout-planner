@@ -5,6 +5,8 @@ const routineReducer = (state = [], action) => {
   switch (action.type) {
   case 'LIST':
     return action.data
+  case 'SHOW':
+    return action.data
   case 'INIT_ROUTINES':
     return action.data
   default:
@@ -33,10 +35,10 @@ export const listRoutines = (id) => {
   }
 }
 
-export const showRoutine = (id) => {
-  console.log('show routine ', id)
+export const showRoutine = (userId, routineId) => {
+  console.log('show routine ', userId, routineId)
   return async (dispatch) => {
-    const routine = await routineService.showRoutine(id)
+    const routine = await routineService.showRoutine(userId, routineId)
     dispatch({
       type: 'SHOW',
       data: routine

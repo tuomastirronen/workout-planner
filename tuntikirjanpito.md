@@ -29,4 +29,5 @@
 | 28.3. | 2    | Logout Redux |
 | 10.4. | 4    | Connect redux |
 | 11.4. | 2    | Connect Redux |
-| yht   | 29   | | 
+| 12.4. | 2    | List routines |
+| yht   | 31   | | 
