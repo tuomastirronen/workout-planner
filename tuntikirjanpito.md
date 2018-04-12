@@ -16,7 +16,7 @@
 | 10.4. | 2    | User controller testit |
 | 11.4. | 1    | lisää User controller testejä |
 | 12.4. | 3    | salasanan suojaus ja autentikoinnin siirto modeliin |
-| yht   | 18   | | 
+| yht   | 21   | | 
 
 ## Joona
 | päivä | aika | mitä tein  |
