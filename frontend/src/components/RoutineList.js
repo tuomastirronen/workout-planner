@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Routine from './Routine'
 import { listRoutines, showRoutine } from './../reducers/routineReducer'
-import { Container, Header} from 'semantic-ui-react'
+import { Container, Header, Message} from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 class RoutineList extends React.Component {
   componentDidMount () {
@@ -11,64 +12,27 @@ class RoutineList extends React.Component {
   }
 
   render () {
-    
-    // return (
-    //   <div>
-    //     <h1>My Routines</h1>
-    //     <ul>
-    //       {this.props.routines.map(routine =>
-    //         <Routine
-    //           key={routine.id}
-    //           routine={routine}
-    //         />
-    //       )}
-    //     </ul>
-    //   </div>
-    // )
-
     return (
       <Container>
         <Header as='h2' color='teal' textAlign='center'>
           {' '}My Routines
         </Header>
         {this.props.routines.map(routine =>
-          <Routine
-            key={routine.id}
-            routine={routine}
-          />
+          <Link to={`/routines/${routine.id}`}>
+            <Message
+              // onClick={this.showRoutineById}
+              attached
+              header={routine.weekday}
+              content={routine.name}
+              icon='child'
+              info
+            />
+          </Link>
         )}
       </Container>
     )
   }
 }
-
-// const RoutineList = (props) => (
-//   <div>
-//     <h1>My Routines</h1>
-//     <ul>
-//       {props.routines.map(routine =>
-//         <Routine
-//           key={routine.id}
-//           routine={routine}
-//         />
-//       )}
-//     </ul>
-//   </div>
-// )
-
-// const RoutineList = (props) => (
-//   <div>
-//     <h1>Routines</h1>
-//     <ul>
-//       {props.listRoutines(1).map(routine =>
-//         <Routine
-//           key={routine.id}
-//           routine={routine}
-//         />
-//       )}
-//     </ul>
-//   </div>
-// )
 
 const mapStateToProps = (state) => {
   return {

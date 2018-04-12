@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import MuscleList from './components/MuscleList.js'
 import LoginForm from './components/LoginForm.js'
@@ -10,6 +11,7 @@ import { loginUser, logoutUser } from './reducers/userReducer'
 
 import { Container, Grid } from 'semantic-ui-react'
 import RoutineList from './components/RoutineList.js'
+import Routine from './components/Routine.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -63,15 +65,21 @@ class App extends React.Component {
         <MuscleList />
       </Grid.Column>
     )
-
+    console.log(this.props)
     return (
-      <Container style={{ paddingTop: '5em' }}>
+      <Container style={{ paddingTop: '5em' }}>      
         { this.props.user === null ?
-          <LoginForm /> :
-          <div>
+          <LoginForm /> : (<div>      
             { logoutButton() }
-            <RoutineList />
-          </div>
+            <Router>
+              <div>           
+                <Route exact path="/" render={() => <RoutineList />} />     
+                <Route exact path="/routines/:id" render={({match}) =>
+                  <Routine routine={this.props.routines.find(routine => routine.id === Number(match.params.id))} />}
+                />    
+              </div>
+            </Router>
+          </div>)
         }
       </Container>
     )
@@ -80,7 +88,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    routines: state.routines
   }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { showRoutine } from './../reducers/routineReducer'
-import { Message } from 'semantic-ui-react'
+import { Container, Header, Segment, Menu, Message, Table } from 'semantic-ui-react'
 
 class Routine extends React.Component {
   componentDidMount () {
@@ -17,14 +17,46 @@ class Routine extends React.Component {
   render () {
 
     return (
-      <Message
-        onClick={this.showRoutineById}
-        attached
-        header={this.props.routine.weekday}
-        content={this.props.routine.name}
-        icon='content'
-        info
-      />
+      <Container>
+        <Header as='h2' color='teal' textAlign='center'>
+          {' '}Routine
+        </Header>
+        <Message
+          attached
+          header='Routine'
+          content='Message'
+          icon='child'
+          info
+        />
+        <Table attached='bottom'>
+        <Table.Header>
+          <Table.HeaderCell>Exercise</Table.HeaderCell>
+          <Table.HeaderCell>Sets</Table.HeaderCell>
+          <Table.HeaderCell>Repetitions</Table.HeaderCell>
+          <Table.HeaderCell>Weight</Table.HeaderCell>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Cell</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+      </Container>
     )
   }
 }
@@ -37,6 +69,7 @@ class Routine extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    routine: state.routine,
     routines: state.routines,
     user: state.user
   }
