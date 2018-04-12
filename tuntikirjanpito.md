@@ -16,6 +16,7 @@
 | 10.4. | 2    | User controller testit |
 | 11.4. | 1    | lisää User controller testejä |
 | 12.4. | 3    | salasanan suojaus ja autentikoinnin siirto modeliin |
+| 12.4. | 2    | semantic ui |
 | yht   | 21   | | 
 
 ## Joona
