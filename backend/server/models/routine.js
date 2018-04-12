@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Routine = sequelize.define('Routine', {
-    weekday: DataTypes.INTEGER,
+    weekday: DataTypes.STRING,
     name: DataTypes.STRING
   }, {});
   Routine.associate = function(models) {

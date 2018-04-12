@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { loginUser } from './../reducers/userReducer'
 
-import { Grid } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
 class LoginForm extends React.Component {
 
@@ -26,30 +26,47 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <Grid.Column>
-          <div>
-            <h2>Kirjaudu</h2>
-
-            <form onSubmit={this.login}>
-              <div>
-                Email
-                <input
-                  name="username"
-                  type="text"
-                />
-              </div>
-              <div>
-                Salasana
-                <input
-                  name="password"
-                  type="password"
-                />
-              </div>
-              <button type="submit">kirjaudu</button>
-            </form>
-          </div>
-        </Grid.Column>
+      <div className='login-form'>      
+      <style>{`
+      body > div,
+      body > div > div,
+      body > div > div > div.login-form {
+        height: 100%;
+      }
+    `}</style>
+        <Grid
+          textAlign='center'
+          style={{ height: '100%' }}
+          verticalAlign='middle'
+        >
+          <Grid.Column style={{ maxWidth: 450 }}>
+            <Header as='h2' color='teal' textAlign='center'>              
+              {' '}Log-in to your account
+            </Header>
+            <div>
+              <Form size='large' onSubmit={this.login}>
+              <Segment stacked>     
+                <Form.Input
+                fluid
+                icon='user'
+                iconPosition='left'
+                name='username'
+                placeholder='E-mail address'
+              />
+              <Form.Input
+                fluid
+                icon='lock'
+                iconPosition='left'
+                placeholder='Password'
+                name='password'
+                type='password'
+              />
+              <Button color='teal' fluid size='large'>Login</Button>
+            </Segment>
+              </Form>
+            </div>
+          </Grid.Column>
+        </Grid>
       </div>
     )
   }

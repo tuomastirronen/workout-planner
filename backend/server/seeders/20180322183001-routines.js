@@ -30,7 +30,7 @@ var routines = [
   {
       "id": 1,
       "user_id": 1,
-      "weekday": 0, // Monday
+      "weekday": "Monday",
       "name": "Rinta + hauis + olkapäät",      
       "updatedAt": "2018-03-22T10:41:38.988208", 
       "createdAt": "2018-03-22T10:41:38.988208"
@@ -38,7 +38,7 @@ var routines = [
   {
     "id": 2,       
     "user_id": 1,
-    "weekday": 2, // Tuesday
+    "weekday": "Wednesday",
     "name": "Etureidet + pakarat + pohkeet + vatsat",      
     "updatedAt": "2018-03-22T10:41:38.988208", 
     "createdAt": "2018-03-22T10:41:38.988208"
@@ -46,7 +46,7 @@ var routines = [
   {
     "id": 3,     
     "user_id": 1,  
-    "weekday": 4, // Thursday
+    "weekday": "Thursday",
     "name": "Ojentajat + olkapäät + rinta",      
     "updatedAt": "2018-03-22T10:41:38.988208", 
     "createdAt": "2018-03-22T10:41:38.988208"
@@ -54,7 +54,7 @@ var routines = [
   {
     "id": 4,     
     "user_id": 1,  
-    "weekday": 5, // Friday
+    "weekday": "Friday",
     "name": "Selkä + takareidet + pakarat + hauis + pohkeet",      
     "updatedAt": "2018-03-22T10:41:38.988208", 
     "createdAt": "2018-03-22T10:41:38.988208"

@@ -1,15 +1,15 @@
 import React from 'react'
+import { Message } from 'semantic-ui-react'
 
 const Routine = ({ routine }) => {
-  return (
-    <li>
-      <div>
-        day: {routine.weekday} name: {routine.name}
-      </div>
-      <div>
-        start
-      </div>
-    </li>
+  return (    
+    <Message
+      attached
+      header={routine.weekday}
+      content={routine.name}
+      icon='help circle'
+      info
+    />
   )
 }
 

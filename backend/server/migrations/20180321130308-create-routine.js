@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       weekday: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       name: {
         type: Sequelize.STRING

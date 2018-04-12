@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Routine from './Routine'
 import { listRoutines, showRoutine } from './../reducers/routineReducer'
-
+import { Container, Header} from 'semantic-ui-react'
 
 class RoutineList extends React.Component {
   componentDidMount () {
@@ -12,18 +12,32 @@ class RoutineList extends React.Component {
 
   render () {
     
+    // return (
+    //   <div>
+    //     <h1>My Routines</h1>
+    //     <ul>
+    //       {this.props.routines.map(routine =>
+    //         <Routine
+    //           key={routine.id}
+    //           routine={routine}
+    //         />
+    //       )}
+    //     </ul>
+    //   </div>
+    // )
+
     return (
-      <div>
-        <h1>My Routines</h1>
-        <ul>
-          {this.props.routines.map(routine =>
+      <Container>
+        <Header as='h2' color='teal' textAlign='center'>              
+          {' '}My Routines
+        </Header>
+        {this.props.routines.map(routine =>
             <Routine
               key={routine.id}
               routine={routine}
             />
-          )}
-        </ul>
-      </div>
+        )}
+      </Container>
     )
   }
 }

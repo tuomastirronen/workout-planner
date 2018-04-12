@@ -56,15 +56,11 @@ class App extends React.Component {
     )
 
     return (
-      <Container>
-        <Grid columns={3}>
-          <Grid.Row>
+      <Container style={{ paddingTop: '5em' }}>        
             { this.props.user === null ?
               <LoginForm /> :
               <RoutineList />
-            }
-          </Grid.Row>
-        </Grid>
+            }                  
       </Container>
     )
   }
