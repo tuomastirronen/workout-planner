@@ -12,7 +12,8 @@ const loggerMiddleware = createLogger()
 const reducer = combineReducers({
   muscles: muscleReducer,
   user: userReducer,
-  routines: routineReducer
+  routines: routineReducer,
+  routine: routineReducer
 })
 
 const store = createStore(

@@ -1,21 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { showRoutine } from './../reducers/routineReducer'
-import { Container, Header, Segment, Menu, Message, Table } from 'semantic-ui-react'
+import { Container, Header, Message, Table } from 'semantic-ui-react'
 
-class Routine extends React.Component {
-  componentDidMount () {
-    console.log('Routine did mount')
+class Routine extends React.Component {  
+  componentDidMount () {    
+    this.props.showRoutine(this.props.user.user.id, this.props.routineId)    
   }
 
-  showRoutineById = () => {
-    console.log('showRoutineById')
-    console.log(this.props.routine.id)
-    this.props.showRoutine(this.props.user.user.id, this.props.routine.id)
-  }
-
-  render () {
-
+  render () {    
+    console.log(this.props)
     return (
       <Container>
         <Header as='h2' color='teal' textAlign='center'>
@@ -23,8 +17,8 @@ class Routine extends React.Component {
         </Header>
         <Message
           attached
-          header='Routine'
-          content='Message'
+          header={this.props.routine.weekday}
+          content={this.props.routine.name}
           icon='child'
           info
         />
@@ -36,24 +30,14 @@ class Routine extends React.Component {
           <Table.HeaderCell>Weight</Table.HeaderCell>
         </Table.Header>
         <Table.Body>
+        {/* {this.props.routine.exercises.map(exercise => */}
           <Table.Row>
-            <Table.Cell>Cell</Table.Cell>
-            <Table.Cell>Cell</Table.Cell>
-            <Table.Cell>Cell</Table.Cell>
-            <Table.Cell>Cell</Table.Cell>
+            <Table.Cell>Barbell Full Squat</Table.Cell>
+            <Table.Cell>4</Table.Cell>
+            <Table.Cell>6</Table.Cell>
+            <Table.Cell>90 kg</Table.Cell>
           </Table.Row>
-          <Table.Row>
-            <Table.Cell>Cell</Table.Cell>
-            <Table.Cell>Cell</Table.Cell>
-            <Table.Cell>Cell</Table.Cell>
-            <Table.Cell>Cell</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Cell</Table.Cell>
-            <Table.Cell>Cell</Table.Cell>
-            <Table.Cell>Cell</Table.Cell>
-            <Table.Cell>Cell</Table.Cell>
-          </Table.Row>
+        {/* )} */}
         </Table.Body>
       </Table>
       </Container>
@@ -61,16 +45,11 @@ class Routine extends React.Component {
   }
 }
 
-// const Routine = ({ routine }) => {
-//   return (
-
-//   )
-// }
-
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
-    routine: state.routine,
     routines: state.routines,
+    routine: state.routine,    
     user: state.user
   }
 }
@@ -79,5 +58,3 @@ export default connect(
   mapStateToProps,
   { showRoutine }
 )(Routine)
-
-//export default Routine

@@ -24,10 +24,10 @@ export const initializeRoutines = (id) => {
   }
 }
 
-export const listRoutines = (id) => {
-  console.log('list routines', id)
+export const listRoutines = (userId) => {
+  console.log('list routines', userId)
   return async (dispatch) => {
-    const routines = await routineService.getAllRoutines(id)
+    const routines = await routineService.getAllRoutines(userId)
     dispatch({
       type: 'LIST',
       data: routines
@@ -39,6 +39,7 @@ export const showRoutine = (userId, routineId) => {
   console.log('show routine ', userId, routineId)
   return async (dispatch) => {
     const routine = await routineService.showRoutine(userId, routineId)
+    console.log(routine)
     dispatch({
       type: 'SHOW',
       data: routine

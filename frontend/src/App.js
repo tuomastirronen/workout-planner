@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import MuscleList from './components/MuscleList.js'
 import LoginForm from './components/LoginForm.js'
 
-import { initializeMuscles } from './reducers/muscleReducer'
-import { initializeRoutines } from './reducers/routineReducer'
 import { loginUser, logoutUser } from './reducers/userReducer'
 
 import { Container, Grid } from 'semantic-ui-react'
@@ -16,21 +14,6 @@ import Routine from './components/Routine.js'
 class App extends React.Component {
   constructor(props) {
     super(props)
-  }
-
-  componentWillMount() {
-    //this.props.initializeMuscles()
-    //console.log('mount: ', this.props.user)
-    //this.props.initializeRoutines(1)
-
-    // const loggedUserJSON = window.localStorage.getItem('loggedUser')
-    // console.log('user: ', window.localStorage.getItem('loggedUser'))
-    // if (loggedUserJSON) {
-    //   const user = JSON.parse(loggedUserJSON)
-    //   console.log('json user: ', user)
-    //   this.props.loginUser({ user })
-      //noteService.setToken(user.token)
-    //}
   }
 
   componentDidMount() {
@@ -58,14 +41,6 @@ class App extends React.Component {
       </div>
     )
 
-    const muscleList = () => (
-      <Grid.Column>
-        {logoutButton()}
-        <h1>Muslces</h1>
-        <MuscleList />
-      </Grid.Column>
-    )
-    console.log(this.props)
     return (
       <Container style={{ paddingTop: '5em' }}>      
         { this.props.user === null ?
@@ -75,7 +50,7 @@ class App extends React.Component {
               <div>           
                 <Route exact path="/" render={() => <RoutineList />} />     
                 <Route exact path="/routines/:id" render={({match}) =>
-                  <Routine routine={this.props.routines.find(routine => routine.id === Number(match.params.id))} />}
+                  <Routine routineId={match.params.id} />}
                 />    
               </div>
             </Router>
@@ -88,8 +63,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user,
-    routines: state.routines
+    user: state.user
   }
 }
 

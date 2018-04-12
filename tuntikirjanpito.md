@@ -17,7 +17,8 @@
 | 11.4. | 1    | lisää User controller testejä |
 | 12.4. | 3    | salasanan suojaus ja autentikoinnin siirto modeliin |
 | 12.4. | 2    | semantic ui |
-| yht   | 21   | | 
+| 12.4. | 3    | routine-komponentti |
+| yht   | 23   | | 
 
 ## Joona
 | päivä | aika | mitä tein  |

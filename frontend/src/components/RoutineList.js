@@ -1,13 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Routine from './Routine'
-import { listRoutines, showRoutine } from './../reducers/routineReducer'
+import { listRoutines } from './../reducers/routineReducer'
 import { Container, Header, Message} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 class RoutineList extends React.Component {
-  componentDidMount () {
-    //console.log('routineList user: ', this.props.user)
+  componentDidMount () {    
     this.props.listRoutines(this.props.user.user.id)
   }
 
@@ -19,8 +17,7 @@ class RoutineList extends React.Component {
         </Header>
         {this.props.routines.map(routine =>
           <Link to={`/routines/${routine.id}`}>
-            <Message
-              // onClick={this.showRoutineById}
+            <Message              
               attached
               header={routine.weekday}
               content={routine.name}
@@ -37,6 +34,7 @@ class RoutineList extends React.Component {
 const mapStateToProps = (state) => {
   return {
     routines: state.routines,
+    routine: state.routine,
     user: state.user
   }
 }
