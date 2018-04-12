@@ -30,7 +30,7 @@ var users = [
   {      
     "id": 1,       
     "email": "tuomas.tirronen@helsinki.fi",
-    "password": "$2a$10$z.O/ZrKNkCU9nq36NC9J2.o4GtfH8TfnP37lZq65wlvmUrbT0Bd8G",
+    "password_digest": "$2a$10$z.O/ZrKNkCU9nq36NC9J2.o4GtfH8TfnP37lZq65wlvmUrbT0Bd8G",
     "first_name": "Tuomas", 
     "last_name": "Tirronen", 
     "updatedAt": "2018-03-22T10:41:38.988208", 
@@ -39,7 +39,7 @@ var users = [
   {
     "id": 2,
     "email": "joonissi@helsinki.fi",
-    "password": "$2a$10$z.O/ZrKNkCU9nq36NC9J2.o4GtfH8TfnP37lZq65wlvmUrbT0Bd8G",
+    "password_digest": "$2a$10$z.O/ZrKNkCU9nq36NC9J2.o4GtfH8TfnP37lZq65wlvmUrbT0Bd8G",
     "first_name": "Joona",
     "last_name": "Nissinen",
     "updatedAt": "2018-03-22T10:41:38.988208",

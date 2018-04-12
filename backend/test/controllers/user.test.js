@@ -15,6 +15,7 @@ describe('users controller', () => {
         chai.request(app)
             .get('/api/users')
             .end((err, res) => {
+                console.log(res.body)
                 res.should.have.status(200);
                 res.body.should.be.a('array');                
             done();
@@ -91,6 +92,7 @@ describe('users controller', () => {
         util.truncateUser();
         var user = factory.User()
         User.create(user).then( function (data) {
+            
             chai.request(app)
             .post('/api/login/')
             .send({username: user.email, password: 'salasana'})

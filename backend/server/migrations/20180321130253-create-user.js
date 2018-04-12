@@ -12,7 +12,7 @@ module.exports = {
         unique: true,
         type: Sequelize.STRING
       },
-      password: {
+      password_digest: {
         type: Sequelize.STRING
       },
       first_name: {
