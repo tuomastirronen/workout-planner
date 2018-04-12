@@ -18,7 +18,7 @@
 | 12.4. | 3    | salasanan suojaus ja autentikoinnin siirto modeliin |
 | 12.4. | 2    | semantic ui |
 | 12.4. | 3    | routine-komponentti |
-| yht   | 23   | | 
+| yht   | 24   | | 
 
 ## Joona
 | päivä | aika | mitä tein  |
