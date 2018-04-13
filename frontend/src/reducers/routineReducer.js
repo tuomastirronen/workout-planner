@@ -38,11 +38,10 @@ export const listRoutines = (userId) => {
 export const showRoutine = (userId, routineId) => {
   console.log('show routine ', userId, routineId)
   return async (dispatch) => {
-    const routine = await routineService.showRoutine(userId, routineId)
-    console.log(routine)
+    const data = await routineService.showRoutine(userId, routineId)    
     dispatch({
       type: 'SHOW',
-      data: routine
+      data: data
     })
   }
 }

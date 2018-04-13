@@ -33,7 +33,6 @@ class App extends React.Component {
 
   render() {
     
-
     const logoutButton = () => (
       <div>
         KÄYTTÄJÄTUNNUS.EMAIL is logged in

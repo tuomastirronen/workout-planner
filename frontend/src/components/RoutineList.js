@@ -33,8 +33,7 @@ class RoutineList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    routines: state.routines,
-    routine: state.routine,
+    routines: state.routines,    
     user: state.user
   }
 }

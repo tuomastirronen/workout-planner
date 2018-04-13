@@ -9,7 +9,7 @@ class Routine extends React.Component {
   }
 
   render () {    
-    console.log(this.props)
+    console.log(this.props.asdf)
     return (
       <Container>
         <Header as='h2' color='teal' textAlign='center'>
@@ -17,8 +17,8 @@ class Routine extends React.Component {
         </Header>
         <Message
           attached
-          header={this.props.routine.weekday}
-          content={this.props.routine.name}
+          header={this.props.routines.weekday}
+          content={this.props.routines.name}
           icon='child'
           info
         />
@@ -47,9 +47,8 @@ class Routine extends React.Component {
 
 const mapStateToProps = (state) => {
   console.log(state)
-  return {
-    routines: state.routines,
-    routine: state.routine,    
+  return {    
+    routines: state.routines,    
     user: state.user
   }
 }
