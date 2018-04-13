@@ -14,11 +14,12 @@
 | 5.4.  | 1    | Taulu + route harjoituksen suorittamiselle (Log) |
 | 10.4. | 3    | Mocha-testaukseen tutustuminen + User model testit |
 | 10.4. | 2    | User controller testit |
-| 11.4. | 1    | lisää User controller testejä |
-| 12.4. | 3    | salasanan suojaus ja autentikoinnin siirto modeliin |
-| 12.4. | 2    | semantic ui |
-| 12.4. | 3    | routine-komponentti |
-| yht   | 24   | | 
+| 11.4. | 1    | Lisää User controller testejä |
+| 12.4. | 3    | Salasanan suojaus ja autentikoinnin siirto modeliin |
+| 12.4. | 2    | Semantic ui |
+| 12.4. | 3    | Routine-komponentti |
+| 13.4. | 1    | Koodin katselmointia |
+| yht   | 25   | | 
 
 ## Joona
 | päivä | aika | mitä tein  |
@@ -32,4 +33,5 @@
 | 10.4. | 4    | Connect redux |
 | 11.4. | 2    | Connect Redux |
 | 12.4. | 2    | List routines |
-| yht   | 31   | | 
+| 13.4. | 1    | Koodin katselmointia |
+| yht   | 32   | | 
