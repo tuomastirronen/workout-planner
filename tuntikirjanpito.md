@@ -19,7 +19,8 @@
 | 12.4. | 2    | Semantic ui |
 | 12.4. | 3    | Routine-komponentti |
 | 13.4. | 1    | Koodin katselmointia |
-| yht   | 25   | | 
+| 25.4. | 1    | package.json projektin juureen + navbar |
+| yht   | 26   | | 
 
 ## Joona
 | päivä | aika | mitä tein  |

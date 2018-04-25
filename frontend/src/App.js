@@ -2,12 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
+// import Navigation from './components/Navigation.js'
+
 import MuscleList from './components/MuscleList.js'
 import LoginForm from './components/LoginForm.js'
 
 import { loginUser, logoutUser } from './reducers/userReducer'
 
-import { Container, Grid } from 'semantic-ui-react'
+import { Container, Grid, Menu, Dropdown, Image } from 'semantic-ui-react'
 import RoutineList from './components/RoutineList.js'
 import Routine from './components/Routine.js'
 
@@ -21,22 +23,34 @@ class App extends React.Component {
     const loggedUserJSON = window.localStorage.getItem('loggedUser')
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
-      console.log(user)      
+      console.log(user)
+      console.log(this.props.user)
     }
   }
 
   logout = (event) => {
-    event.preventDefault()
-    console.log(this.props.user)
+    event.preventDefault()    
     this.props.logoutUser()
   }
 
   render() {
     
-    const logoutButton = () => (
-      <div>
-        KÄYTTÄJÄTUNNUS.EMAIL is logged in
-        <button onClick={this.logout}>Logout</button>
+    // TODO siirrä eristettyyn komponenttiin
+    const navigation = () => (
+      <div>      
+        <Menu fixed='top' inverted>
+            <Container>
+            <Menu.Item as='a' header>
+                <Image
+                size='mini'
+                src='/logo.png'
+                style={{ marginRight: '1.5em' }}
+                />
+                Workout Planner
+            </Menu.Item>            
+            <Menu.Item as='a' onClick={this.logout}>Logout</Menu.Item>         
+            </Container>
+            </Menu>
       </div>
     )
 
@@ -44,7 +58,7 @@ class App extends React.Component {
       <Container style={{ paddingTop: '5em' }}>      
         { this.props.user === null ?
           <LoginForm /> : (<div>      
-            { logoutButton() }
+            { navigation() }
             <Router>
               <div>           
                 <Route exact path="/" render={() => <RoutineList />} />     
