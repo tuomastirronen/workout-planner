@@ -2,9 +2,6 @@
     "name": "workout-planner",
     "version": "1.0.0",
     "private": true,
-    "dependencies": {
-        "react-scripts": "1.1.0"
-    },
     "scripts": {
         "start": "npm run watch --prefix backend | npm start --prefix frontend"
     }
