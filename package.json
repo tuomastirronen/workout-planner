@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "start": "npm run watch --prefix backend | npm start --prefix frontend"
+        "start": "npm run watch --prefix backend | npm start --prefix frontend",
+        "test": "npm test --prefix backend"
     }
 }
