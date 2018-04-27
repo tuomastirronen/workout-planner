@@ -35,4 +35,6 @@
 | 11.4. | 2    | Connect Redux |
 | 12.4. | 2    | List routines |
 | 13.4. | 1    | Koodin katselmointia |
-| yht   | 32   | | 
+| 26.4. | 4    | Persistent login |
+| 27.4. | 1    | Persistent login |
+| yht   | 37   | | 
