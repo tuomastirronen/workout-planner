@@ -2,10 +2,13 @@
     "name": "workout-planner",
     "version": "1.0.0",
     "private": true,
-    "dependencies": {
-        "react-scripts": "1.1.0"
-    },
     "scripts": {
-        "start": "npm run watch --prefix backend | npm start --prefix frontend"
+        "start": "npm run watch --prefix backend | npm start --prefix frontend",
+        "test": "npm test --prefix backend"
+    },
+    "dependencies": {
+        "mocha": "^5.1.1",
+        "chai": "^4.1.2",
+        "chai-http": "^4.0.0"
     }
 }
