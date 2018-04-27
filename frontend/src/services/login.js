@@ -2,8 +2,12 @@ import axios from 'axios'
 const loginUrl = 'http://localhost:3001/api/login'
 //const userUrl = 'http://localhost:3001/api/users/'
 
-const login = async (credentials) => {
-  //console.log('service ', credentials)
+const login = async (email, password) => {
+  //console.log('login service ', email, password)
+  let credentials = {
+    username: email,
+    password: password
+  }
   //console.log('username: ', credentials.username)
   //console.log('password: ', credentials.password)
   // find user by email

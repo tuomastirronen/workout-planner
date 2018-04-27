@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 class RoutineList extends React.Component {
   componentDidMount () {    
-    this.props.listRoutines(this.props.user.user.id)
+    //this.props.listRoutines(this.props.user.user.id)
   }
 
   render () {

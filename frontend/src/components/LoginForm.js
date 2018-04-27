@@ -1,30 +1,37 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { loginUser } from './../reducers/userReducer'
+import { auth } from './../reducers/userReducer'
 
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 
 class LoginForm extends React.Component {
 
-  login = (event) => {
+  // login = (event) => {
+  //   event.preventDefault()
+  //   //const user = event.target.username.value
+  //   //let password = event.target.password.value
+  //   this.props.loginUser( {
+  //     username: event.target.username.value,
+  //     password: event.target.password.value
+  //   })
+
+  //   // debug
+  //   window.localStorage.setItem('loggedUser', JSON.stringify({ username: event.target.username.value }))
+
+  //   console.log(event.target.username.value)
+  //   event.target.username.value = ''
+  //   event.target.password.value = ''
+  // }
+
+  submitHandler = (event) => {
     event.preventDefault()
-    //const user = event.target.username.value
-    //let password = event.target.password.value
-    this.props.loginUser( {
-      username: event.target.username.value,
-      password: event.target.password.value
-    })
-
-    // debug
-    window.localStorage.setItem('loggedUser', JSON.stringify({ username: event.target.username.value }))
-
-    console.log(event.target.username.value)
-    event.target.username.value = ''
-    event.target.password.value = ''
+    //this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value)
+    this.props.onAuth(event.target.username.value, event.target.password.value)
   }
 
   render() {
+    console.log('login form props ', this.props)
     return (
       <div className='login-form'>      
       <style>{`
@@ -44,7 +51,7 @@ class LoginForm extends React.Component {
               {' '}Log-in to your account
             </Header>
             <div>
-              <Form size='large' onSubmit={this.login}>
+              <Form size='large' onSubmit={this.submitHandler}>
               <Segment stacked>     
                 <Form.Input
                 fluid
@@ -75,11 +82,18 @@ class LoginForm extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    isAuthenticated: state.authData.token !== null
+    //loading: state.auth.loading
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onAuth: (email, password) => dispatch(auth(email, password))
   }
 }
 
 export default connect(
   mapStateToProps,
-  { loginUser }
+  mapDispatchToProps,
 )(LoginForm)

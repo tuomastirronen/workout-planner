@@ -1,31 +1,32 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // import Navigation from './components/Navigation.js'
 
-import MuscleList from './components/MuscleList.js'
+//import MuscleList from './components/MuscleList.js'
 import LoginForm from './components/LoginForm.js'
 
-import { loginUser, logoutUser } from './reducers/userReducer'
+import { authCheckState } from './reducers/userReducer'
 
-import { Container, Grid, Menu, Dropdown, Image } from 'semantic-ui-react'
+import { Container, Menu, Image } from 'semantic-ui-react'
 import RoutineList from './components/RoutineList.js'
 import Routine from './components/Routine.js'
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
   componentDidMount() {
-    console.log("did mount")
-    const loggedUserJSON = window.localStorage.getItem('loggedUser')
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON)
-      console.log(user)
-      console.log(this.props.user)
-    }
+    // console.log("did mount")
+    // const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    // if (loggedUserJSON) {
+    //   const user = JSON.parse(loggedUserJSON)
+    //   console.log(user)
+    //   console.log(this.props.user)
+    // }
+    this.props.onTryAutoSignup()
   }
 
   logout = (event) => {
@@ -34,7 +35,7 @@ class App extends React.Component {
   }
 
   render() {
-    
+    console.log('this props ', this.props)
     // TODO siirrä eristettyyn komponenttiin
     const navigation = () => (
       <div>      
@@ -55,8 +56,9 @@ class App extends React.Component {
     )
 
     return (
+      
       <Container style={{ paddingTop: '5em' }}>      
-        { this.props.user === null ?
+        { this.props.authData === undefined ?
           <LoginForm /> : (<div>      
             { navigation() }
             <Router>
@@ -76,11 +78,18 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    //user: state.user,
+    authData: state.authData
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTryAutoSignup: () => dispatch(authCheckState())
   }
 }
 
 export default connect(
-  mapStateToProps,
-  { loginUser, logoutUser }
+  null,
+  mapDispatchToProps
 )(App)
