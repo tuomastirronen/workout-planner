@@ -19,18 +19,11 @@ class App extends React.Component {
   // }
 
   componentDidMount() {
-    // console.log("did mount")
-    // const loggedUserJSON = window.localStorage.getItem('loggedUser')
-    // if (loggedUserJSON) {
-    //   const user = JSON.parse(loggedUserJSON)
-    //   console.log(user)
-    //   console.log(this.props.user)
-    // }
     this.props.onTryAutoSignup()
   }
 
   logout = (event) => {
-    event.preventDefault()    
+    event.preventDefault()
     this.props.logoutUser()
   }
 
@@ -90,6 +83,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App)

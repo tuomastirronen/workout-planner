@@ -33,14 +33,14 @@ class LoginForm extends React.Component {
   render() {
     console.log('login form props ', this.props)
     return (
-      <div className='login-form'>      
-      <style>{`
-      body > div,
-      body > div > div,
-      body > div > div > div.login-form {
-        height: 100%;
-      }
-    `}</style>
+      <div className='login-form'>
+        <style>{`
+          body > div,
+          body > div > div,
+          body > div > div > div.login-form {
+            height: 100%;
+          }
+        `}</style>
         <Grid
           textAlign='center'
           style={{ height: '100%' }}
@@ -52,24 +52,24 @@ class LoginForm extends React.Component {
             </Header>
             <div>
               <Form size='large' onSubmit={this.submitHandler}>
-              <Segment stacked>     
-                <Form.Input
-                fluid
-                icon='user'
-                iconPosition='left'
-                name='username'
-                placeholder='E-mail address'
-              />
-              <Form.Input
-                fluid
-                icon='lock'
-                iconPosition='left'
-                placeholder='Password'
-                name='password'
-                type='password'
-              />
-              <Button color='teal' fluid size='large'>Login</Button>
-            </Segment>
+                <Segment stacked>
+                  <Form.Input
+                    fluid
+                    icon='user'
+                    iconPosition='left'
+                    name='username'
+                    placeholder='E-mail address'
+                  />
+                  <Form.Input
+                    fluid
+                    icon='lock'
+                    iconPosition='left'
+                    placeholder='Password'
+                    name='password'
+                    type='password'
+                  />
+                  <Button color='teal' fluid size='large'>Login</Button>
+                </Segment>
               </Form>
             </div>
           </Grid.Column>
@@ -82,7 +82,8 @@ class LoginForm extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.authData.token !== null
+    //isAuthenticated: state.authData.token !== null
+    isAuthenticated: state.authData !== null
     //loading: state.auth.loading
   }
 }

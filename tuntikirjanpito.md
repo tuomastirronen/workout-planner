@@ -37,4 +37,5 @@
 | 13.4. | 1    | Koodin katselmointia |
 | 26.4. | 4    | Persistent login |
 | 27.4. | 1    | Persistent login |
+| 6.5.  | 1    | Persistent login |
 | yht   | 37   | | 
